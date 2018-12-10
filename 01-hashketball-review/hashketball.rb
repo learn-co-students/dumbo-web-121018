@@ -128,6 +128,79 @@ def game_hash
 end
 
 def num_points_scored(player_name)
+  player_hash = find_player(player_name)
+  player_hash[:points]
 end
 
+def shoe_size(player_name)
+  player_hash = find_player(player_name)
+  player_hash[:shoe]
+end
+
+def find_player(player_name)
+  players.find { |player_hash| player_hash[:name] == player_name }
+end
+
+def players
+  home_players = game_hash[:home][:players]
+  away_players = game_hash[:away][:players]
+
+  home_players + away_players
+end
+
+
+# num_points_scored("Jeff Adrien") => 10
+# shoe_size("Jeff Adrien") => 18
+
+find_player("Jeff Adrien")
+#
 binding.pry
+
+
+
+
+
+
+
+
+
+# want to know what you're looking for first
+# looking for the points ?
+# work my way from the key :points and work my way up to the parent objects
+
+# How would a human do this?
+
+# taking in a player name and look for the points scored
+# scrolling down the hash and looking for the player
+# name and then the players points scored
+
+
+# # find a player?
+# # - going through the different layers that lead to a player
+# # - want the values of payers that hold the players score
+#
+# # and return the player that we are looking for's points
+# # -
+#
+# # let's find "Jeff Adrien" and returns his points
+# # game_hash[:away][:players][0][:points]
+#
+# # how we got here:
+# #  - look through home and away
+#   game_hash.each do |location, team_info|
+#     # go to just the players key
+#     #  - find the players in the team hash
+#     team_info[:players].each do |player_hash|
+#       # we have each player?
+#       #  - look through each player to find the
+#       # player with the name "Jeff Adrien"
+#       if player_hash[:name] == player_name
+#         #  - return the players points
+#         return player_hash[:points]
+#       end
+#     end
+#   end
+#
+#
+# # to see what team jeff was on
+#
