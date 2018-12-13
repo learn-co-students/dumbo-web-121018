@@ -1,0 +1,140 @@
+What is a model?
+- a blueprint (tells you how it's supposed to look/features/etc)
+- interact with them based on their attributes and behaviors
+
+
+What is a domain?
+- a specific space (you know where it's located, something happens within that space)
+- like an address that your going to (how to give the direction to get there)
+- a container for other things (where specific things can be stored)
+
+
+What is domain modeling?
+- where multiple models show their corrilation between behaviors and communication between eachother
+- a map to whatever you have for your blueprint
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How do yo get different classes to talk to eachother?
+
+How do we get certain from one class, through another one?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is single source of truth?
+
+
+
+What is a class method?
+
+
+
+Model our tweet & user & their relationship
+
+
+
+Explain how the folder structer system works and what require is
+
+
+
+Code out our expectations
+
+
+
+Set up pry
+
+
+
+Build user, build example users
+
+
+
+Build tweet, build example tweets
+
+
+
+When we make a tweet and pass in a user, tell them this is not a string and this is how we actually practially code out relationships
+
+Show self in instance method ,
+
+
+
+Cover self when we get to add_tweet
+
+When we get to @@all, cover self
+
+
+
+Show self in class variable/method
+
+
+
+Add tweets do user at first via instance variable
+
+Add tweets to user via add_tweet,
+
+
+
+Show how the instance variable in user @tweets doesn’t have the user’s tweet that is made by just creating a Tweet.new and fix it
+
+
+
+Explain that if you ever need info about the tweets user, I can just use it
+
+
+
+Use select, if time, explain it
