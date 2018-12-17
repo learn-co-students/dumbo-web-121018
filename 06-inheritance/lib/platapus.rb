@@ -1,0 +1,2 @@
+class Platapus < Animal
+end

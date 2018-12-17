@@ -1,0 +1,2 @@
+class Lion < Cat
+end
