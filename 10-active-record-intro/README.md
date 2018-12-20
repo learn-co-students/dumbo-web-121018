@@ -1,4 +1,4 @@
-Welcome to ACTIVERECORD😍
+Welcome to ACTIVE RECORD 😍
 
 ### Rake and File Structure
 
