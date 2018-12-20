@@ -1,4 +1,4 @@
-## Sample Student Facing README:
+Welcome to ACTIVERECORD😍
 
 ### Rake and File Structure
 
