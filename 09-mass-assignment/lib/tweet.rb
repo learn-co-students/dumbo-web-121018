@@ -1,10 +1,36 @@
 class Tweet
-  attr_accessor :message, :username, :id
+  attr_accessor :message, :username, :is_hungry, :date
 
-  def initialize(username, message, id=nil)
-    @message = message
-    @username = username
-    @id = id
+  # def message
+  #   @message
+  # end
+
+  # def message=(new_message)
+  #   @message = new_message
+  # end
+
+  Tweet.new(
+    {
+      message: "Hello World",
+      username: "JaneyWaney",
+      is_hungry: true,
+      date: "today"
+    }
+  )
+  def initialize(attributes_hash)
+    # binding.pry
+    # @message = attributes_hash[:message]
+    # @username = attributes_hash[:username]
+    # @is_hungry = attributes_hash[:is_hungry]
+    # @date = attributes_hash[:date]
+
+    # tweet.send("message=", "Test")
+    attributes_hash.each do |key, value|
+      if self.respond_to?("#{key}=")
+        self.send("#{key}=", value)
+      end
+    end
+
   end
 
   def self.create(username, message)
@@ -15,7 +41,7 @@ class Tweet
 
   def self.all
     sql = <<-SQL
-      SELECT * FROM tweets
+    SELECT * FROM tweets
     SQL
 
     results = DB[:conn].execute(sql)
@@ -27,9 +53,9 @@ class Tweet
 
   def save
     sql = <<-SQL
-      INSERT INTO tweets
-      (username, message)
-      VALUES ("#{@username}", "#{@message}")
+    INSERT INTO tweets
+    (username, message)
+    VALUES ("#{@username}", "#{@message}")
     SQL
 
     DB[:conn].execute(sql)
