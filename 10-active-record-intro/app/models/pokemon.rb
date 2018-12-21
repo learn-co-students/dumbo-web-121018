@@ -1,5 +1,5 @@
 class Pokemon < ActiveRecord::Base
   def fight
-    "AHHHHHH I am fighting you!"
+    "#{name} attacks with #{attack}!!!!"
   end
 end
