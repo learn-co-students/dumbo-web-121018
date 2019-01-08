@@ -1,3 +1,8 @@
 <p><%= @person.name %></p>
 <p><%= @person.age %></p>
 <p><%= @person.pronouns %></p>
+
+<form action="/people/<%= @person.id %>" method="post">
+  <input type="hidden" name="_method" value="delete"/>
+  <input type="submit" value="delete this person"/>
+</form>

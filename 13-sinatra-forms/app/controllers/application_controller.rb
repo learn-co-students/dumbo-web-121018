@@ -64,6 +64,17 @@ class ApplicationController < Sinatra::Base
     redirect "/people/#{@person.id}"
   end
 
+  # Delete Action => "Remove this individual from the database"
+  # This action doesn't have a complimentary "view" per se, however,
+  # what we do is reference this in the show page and it will delete in backend
+  # and redirect us to the index
+  delete "/people/:id" do
+    @person = Person.find(params[:id])
+    @person.destroy
+
+    redirect "/people"
+  end
+
 
   get "/corgissssssssssssssss" do
     "Wowowowowowowowow"
