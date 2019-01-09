@@ -1,0 +1,12 @@
+<h1>Edit this Animal</h1>
+
+<form action="/animals/<%= @animal.id %>" method="post">
+  <input type="hidden" name="_method" value="patch"/>
+  <label>Name:</label>
+  <input value="<%= @animal.name %>" type="text" name="animal[name]"/>
+  <label>Weight:</label>
+  <input  value="<%= @animal.weight %>" type="text" name="animal[weight]"/>
+  <label>Species:</label>
+  <input  value="<%= @animal.species %>" type="text" name="animal[species]"/>
+  <input type="submit" value="Submit" />
+</form>
