@@ -1,0 +1,15 @@
+<h1>Create a new Song</h1>
+
+<!-- Create Action: URL and the METHOD -->
+<form action="/songs" method="post">
+  <input type="text" name="name" />
+  <input type="text" name="artist_id"/>
+  <select name="artist_id">
+    <% @artists.each do |artist| %>
+      <option value="<%= artist.id %>"><%= artist.name %></option>
+    <% end %>
+  </select>
+  <input type="submit"/>
+</form>
+
+<!-- Song.new(name: params[:name], artist_id: params[:artist_id]) -->
