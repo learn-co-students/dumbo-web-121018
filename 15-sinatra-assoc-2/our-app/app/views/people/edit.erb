@@ -1,0 +1,12 @@
+<h2>Edit a new Person</h2>
+
+<form action="/people/<%= @person.id %>" method="post">
+  <input type="hidden" name="_method" value="patch"/>
+  <label for="name">Name</label>
+  <input value="<%= @person.name %>" name="person[name]" type="text"/>
+  <label>Age</label>
+  <input value="<%= @person.age %>" name="person[age]" type="text"/>
+  <label>Pronouns</label>
+  <input value="<%= @person.pronouns %>" name="person[pronouns]" type="text"/>
+  <input value="Edit a New Person" type="submit" />
+</form>

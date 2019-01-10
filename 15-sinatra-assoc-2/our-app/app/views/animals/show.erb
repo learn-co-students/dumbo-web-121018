@@ -1,0 +1,10 @@
+<h1>Specific Animal</h1>
+
+<p><%= @animal.name %></p>
+<p><%= @animal.species %></p>
+<p><%= @animal.weight %></p>
+
+<form action="/animals/<%= @animal.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" value="Delete this Animal" />
+</form>
