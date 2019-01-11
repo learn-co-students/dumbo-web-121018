@@ -1,0 +1,6 @@
+<!-- Render all of the pokemon -->
+<ul>
+  <% @pokemons.each do |pokemon| %>
+    <li><%= pokemon.name %> (<%= pokemon.nickname %>)</li>
+  <% end %>
+</ul>
