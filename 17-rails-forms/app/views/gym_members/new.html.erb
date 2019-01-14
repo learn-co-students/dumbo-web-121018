@@ -1,0 +1,26 @@
+<!-- The form -->
+<!-- POST /gym_members -->
+<!--   # params = { gym_members: {name: "....", phone_number: "....", address: "...."}} -->
+<%= form_for @gym_member do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <%= f.submit %>
+<% end %>
+<hr>
+<br>
+<br>
+<br>
+<br>
+<%# form_tag "/gym_members", method: "post" do %>
+  <%# label_tag(:name, "Name") %>
+  <%# text_field_tag(:'gym_member[name]') %>
+  <%# label_tag(:address, "Address") %>
+  <%# text_field_tag(:'gym_member[address]') %>
+  <%# label_tag(:phone_number, "Phone Number") %>
+  <%# text_field_tag(:'gym_member[phone_number]') %>
+  <%# submit_tag("Create Membership") %>
+  <%# end %>
