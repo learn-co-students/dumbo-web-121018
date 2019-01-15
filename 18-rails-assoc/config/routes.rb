@@ -15,5 +15,6 @@ Rails.application.routes.draw do
 
   patch "/gym_members/:id", to: 'gym_members#update'
 
+  get "/trainers/:id", to: 'trainers#show'
 
 end

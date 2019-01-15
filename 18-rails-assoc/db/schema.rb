@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_14_161405) do
+ActiveRecord::Schema.define(version: 2019_01_15_161258) do
 
   create_table "gym_members", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.boolean "membership_status", default: true
     t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "trainer_id"
+  end
+
+  create_table "trainers", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.boolean "employee_status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

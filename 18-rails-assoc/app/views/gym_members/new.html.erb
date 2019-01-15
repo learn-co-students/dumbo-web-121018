@@ -1,6 +1,13 @@
 <!-- The form -->
 <!-- POST /gym_members -->
 <!--   # params = { gym_members: {name: "....", phone_number: "....", address: "...."}} -->
+<% if flash[:error] %>
+  <% flash[:error].each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+<% end %>
+
+
 <%= form_for @gym_member do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -8,6 +15,8 @@
   <%= f.text_field :address %>
   <%= f.label :phone_number %>
   <%= f.text_field :phone_number %>
+  <%= f.label :trainer_id %>
+  <%= f.collection_select :trainer_id, @trainers, :id, :name %>
   <%= f.submit %>
 <% end %>
 <hr>

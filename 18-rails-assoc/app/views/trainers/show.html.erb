@@ -1,0 +1,8 @@
+<h1><%= @trainer.name %></h1>
+
+<h3>List of all the clients</h3>
+<ul>
+  <% @trainer.gym_members.each do |gym_member| %>
+    <li><%= gym_member.name %></li>
+  <% end %>
+</ul>
