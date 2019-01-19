@@ -129,7 +129,7 @@ In certain cases, it's more secure to offer _less_ feedback to the user. This is
 
 Use a `form_tag` instead of a `form_for` here, we don't have a model to couple the form with.
 
-_All forms need an action and a method, and here the action is _`/sessions`_, but that may not be intuitive to the students, so call it out explicitly._
+_All forms need an action and a method, and here the action is _`/sessions`_._
 
 ```text
 <%= form_tag sessions_path do %>
