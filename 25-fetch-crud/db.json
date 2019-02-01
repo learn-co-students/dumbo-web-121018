@@ -16,8 +16,8 @@
     },
     {
       "id": 2,
-      "title": "The Room",
-      "year": 2003,
+      "title": "The Ro",
+      "year": "2003",
       "cast": [
         "Tommy Wiseau",
         "Greg Sestero",
@@ -26,15 +26,15 @@
     },
     {
       "id": 3,
-      "title": "Battlefield Earth",
-      "year": 2000,
+      "title": "Battlefield Ear",
+      "year": "2000",
       "cast": [
         "John Travolta"
       ]
     },
     {
       "id": 4,
-      "title": "Twilight",
+      "title": "Twilig",
       "year": 2008,
       "cast": [
         "Kristen Stewart",
