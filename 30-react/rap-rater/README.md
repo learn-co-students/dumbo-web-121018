@@ -1,15 +1,8 @@
-## React State && Events
+## React LifeCycle Methods
 
-- What are Props?
-  - properties of a component that is immutable by that component but can be edited by the component's parent (if it has one)
-- What is State?
-  - is an object that holds information that falls into either or both of the following categories:
-    1. the information comes from outside of our application, meaning we cannot pass it as a prop from a parent component.
-    2. the information can be changed by the component.
-- What are Events?
-  - A way for HTML/DOM to trigger Js code
-- What is a Callback Function?
+- What is a life cycle?
 
-  - A function that is passed to another function that that function can call at a later time
+  - The process a component goes through from Mounting to UnMounting
 
-- How do we use these 4 things to allow our User to interact with our app?
+- What is a life cycle method?
+  - is a method that allows us to stop React at specific points in a component's life cycle to run a block of code

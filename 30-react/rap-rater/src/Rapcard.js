@@ -5,15 +5,17 @@ class Rapcard extends Component {
     clicked: false
   };
 
-  clickHandler = () => {
-    console.log("clicked");
+  componentWillUnmount() {
+    alert("Is you stupid is you dumb");
+  }
+
+  flipClickHandler = () => {
     this.setState({
       clicked: !this.state.clicked
     });
   };
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <h1>{this.props.rapper.name}</h1>
@@ -25,7 +27,12 @@ class Rapcard extends Component {
               : this.props.rapper.sadImage
           }
         />
-        <button onClick={this.clickHandler}>Flip Card</button>
+        <button onClick={this.flipClickHandler}>Flip Card</button>
+        <button
+          onClick={() => this.props.deleteClickHandler(this.props.rapper)}
+        >
+          Delete
+        </button>
       </div>
     );
   }
