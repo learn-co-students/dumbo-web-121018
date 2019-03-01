@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import Rapcard from "./Rapcard";
 import Form from "./Form";
 import Search from "./Search";
@@ -11,7 +12,7 @@ class Rapcontainer extends React.Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3001/rapperList")
+    fetch("http://localhost:3000/rapperList")
       .then(resp => resp.json())
       .then(allRappers =>
         this.setState({
@@ -55,21 +56,42 @@ class Rapcontainer extends React.Component {
       />
     ));
     return (
-      <div>
-        {this.state.rappers.length > 0 ? (
-          <div>
-            <Form submitHandler={this.submitHandler} />
-            <br />
-            <Search
-              searchTerm={this.state.searchTerm}
-              changeHandler={this.changeHandler}
-            />
-            {rappers}
-          </div>
-        ) : (
-          <h1>Loading</h1>
-        )}
-      </div>
+      <Switch>
+        <div>
+          <Route
+            path="/rappers/:name"
+            render={routerProps => {
+              let name = routerProps.match.params.name;
+              let rapper = this.state.rappers.find(
+                rapper => rapper.name === name
+              );
+              return <Rapcard rapper={rapper} />;
+            }}
+          />
+          <Route
+            path="/rappers"
+            render={() => {
+              return (
+                <div>
+                  {this.state.rappers.length > 0 ? (
+                    <div>
+                      <Form submitHandler={this.submitHandler} />
+                      <br />
+                      <Search
+                        searchTerm={this.state.searchTerm}
+                        changeHandler={this.changeHandler}
+                      />
+                      {rappers}
+                    </div>
+                  ) : (
+                    <h1>LOADING</h1>
+                  )}
+                </div>
+              );
+            }}
+          />
+        </div>
+      </Switch>
     );
   }
 }

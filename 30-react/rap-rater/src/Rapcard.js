@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Rapcard extends Component {
   state = {
@@ -19,14 +20,16 @@ class Rapcard extends Component {
     return (
       <div>
         <h1>{this.props.rapper.name}</h1>
-        <img
-          alt=""
-          src={
-            this.state.clicked
-              ? this.props.rapper.happyImage
-              : this.props.rapper.sadImage
-          }
-        />
+        <Link to={`/rappers/${this.props.rapper.name}`}>
+          <img
+            alt=""
+            src={
+              this.state.clicked
+                ? this.props.rapper.happyImage
+                : this.props.rapper.sadImage
+            }
+          />
+        </Link>
         <button onClick={this.flipClickHandler}>Flip Card</button>
         <button
           onClick={() => this.props.deleteClickHandler(this.props.rapper)}
