@@ -9,6 +9,15 @@ class Api::V1::AuthController < ApplicationController
     end
   end
 
+  def show
+    @user = current_user
+    if @user
+    render json: {user: @user }
+    else
+      render json: { error: 'must log in' }, status: :unauthorized
+    end
+  end
+
   private
 
   def user_login_params
