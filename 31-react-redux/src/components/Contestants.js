@@ -1,7 +1,10 @@
 import React from 'react'
 import ContestantCard from './ContestantCard'
+import {connect} from 'react-redux';
 
 function Contestants(props) {
+
+  // console.log(props);
 
   const mapContestants = () => {
     let contestantArray = Object.values(props.contestants)
@@ -25,4 +28,12 @@ function Contestants(props) {
   )
 }
 
-export default Contestants
+
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    contestants: state.contestants
+  }
+}
+
+export default connect(mapStateToProps)(Contestants)
