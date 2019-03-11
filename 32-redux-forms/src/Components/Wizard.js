@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import {removeWizard} from '../Redux/actions'
 
 class Wizard extends Component {
 
+  handleClick = () => {
+    this.props.removeWizard(this.props.wizard.name)
+  }
+
   render() {
+    const {wizard} = this.props
     return (
-      <div>
-      <h6>{"Wizard Name?"}</h6>
+      <div onClick={this.handleClick}>
+      <h6>{wizard.name}</h6>
         <p>
-          {"Wizard House"} | {"Wizard Redux"}
+          {wizard.house} | {wizard.redux}
         </p>
       </div>
     );
   }
 }
 
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     removeWizard: (name) => dispatch({type: "REMOVE_WIZARD", payload: name})
+//   }
+// }
 
-
-export default Wizard;
+export default connect(null, {removeWizard})(Wizard);

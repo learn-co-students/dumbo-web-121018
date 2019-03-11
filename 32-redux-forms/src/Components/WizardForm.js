@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import {addWizard} from '../Redux/actions'
 
 class WizardForm extends Component {
 
@@ -16,7 +18,8 @@ class WizardForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log("Submitted!");
+    const newWizard = this.state
+    this.props.addWizard(newWizard)
   }
 
   render() {
@@ -42,6 +45,10 @@ class WizardForm extends Component {
 
 }
 
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addWizard: (wizardObj) => dispatch({type: "ADD_WIZARD" , payload: wizardObj})
+//   }
+// }
 
-
-export default WizardForm;
+export default connect(null, { addWizard })(WizardForm);
