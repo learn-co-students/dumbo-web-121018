@@ -1,19 +1,18 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import CohortName from "./CohortName";
+import Rapcontainer from "./Rapcontainer";
+import Home from "./Home";
 
 class App extends Component {
-  state = {
-    name: "String Cheese",
-    anything: "anything"
-  };
-
   render() {
-    console.log("App state", this.state);
+    console.log(this.props);
     return (
       <div>
-        <CohortName name={this.state.name} />
+        <Switch>
+          <Route path="/rappers" component={Rapcontainer} />
+          <Route path="/" component={Home} />
+        </Switch>
       </div>
     );
   }
